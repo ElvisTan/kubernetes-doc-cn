@@ -42,11 +42,11 @@ TODO: 可插拔性（原文中的TODO）
 * 目标是所有组件实现[自托管（Self-hosting）](https://github.com/GoogleCloudPlatform/kubernetes/issues/246)。
 * 让依赖最小化，特别是那些需要稳态运行的组件。
 * 通过有原则的分层方式对保留的依赖进行分层。
-* Break any circular dependencies by converting hard dependencies to soft dependencies.
+* 通过将硬依赖转换成软依赖的方法，来打破任何循环依赖。
   * Also accept that data from other components from another source, such as local files, which can then be manually populated at bootstrap time and then continuously updated once those other components are available.
-  * State should be rediscoverable and/or reconstructable.
+  * 状态应该是可被重新发现的（rediscoverable）和/或可被重新构造的（reconstructable）。
   * Make it easy to run temporary, bootstrap instances of all components in order to create the runtime state needed to run the components in the steady state; use a lock (master election for distributed components, file lock for local components like Kubelet) to coordinate handoff. We call this technique "pivoting".
-  * Have a solution to restart dead components. For distributed components, replication works well. For local components such as Kubelet, a process manager or even a simple shell loop works.
+  * 要有重启已挂掉组件的方法。对于分布式的组件，多副本方式可以很好得运作。对于像Kubelet的本地组件，可以用一个进程管理器，甚至一个简单的shell脚本循环。
 
 ## 可用性
 
