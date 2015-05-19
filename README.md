@@ -10,6 +10,6 @@
 
 * [API对象文档](http://kubernetes.io/third_party/swagger-ui/) 是一个描述核心API对象的详细说明。
 
-* [Kubernetes设计](design)概述
+* [Kubernetes设计](design)概述。
 
 * [examples](../examples)目录中有一些例子文件和演练。
